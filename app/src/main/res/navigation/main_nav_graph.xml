@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/splashScreenFragment">
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="learn.shendy.kontry.ui.fragments.SplashScreenFragment"
+        android:label="fragment_splash_screen_start"
+        tools:layout="@layout/fragment_splash_screen_start">
+        <action
+            android:id="@+id/action_splashScreenFragment_to_countriesFragment"
+            app:destination="@id/countriesFragment"
+            app:popUpTo="@id/splashScreenFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/countriesFragment"
+        android:name="learn.shendy.kontry.ui.fragments.CountriesFragment"
+        android:label="fragment_countries"
+        tools:layout="@layout/fragment_countries">
+        <action
+            android:id="@+id/action_countriesFragment_to_countryDetailsFragment"
+            app:destination="@id/countryDetailsFragment"
+            app:enterAnim="@anim/moderate_fade_in_slide_in_right"
+            app:exitAnim="@anim/fast_fade_out_slide_out_left"
+            app:popEnterAnim="@anim/moderate_fade_in_slide_int_left"
+            app:popExitAnim="@anim/fast_fade_out_slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/countryDetailsFragment"
+        android:name="learn.shendy.kontry.ui.fragments.CountryDetailsFragment"
+        android:label="fragment_country_details"
+        tools:layout="@layout/fragment_country_details">
+
+        <argument
+            android:name="countryName"
+            app:argType="string"
+            android:defaultValue="Country Name" />
+
+        <argument
+            android:name="country"
+            app:argType="learn.shendy.kontry.repository.model.country.Country" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/noInternetFragment"
+        android:name="learn.shendy.kontry.ui.fragments.UnavailableInternetFragment"
+        android:label="no_internet_fragment"
+        tools:layout="@layout/fragment_unavailable_internet" />
+    <action
+        android:id="@+id/global_action_to_noInternetFragment"
+        app:destination="@id/noInternetFragment"
+        app:enterAnim="@anim/moderate_fade_in"
+        app:exitAnim="@anim/fast_fade_out" />
+</navigation>

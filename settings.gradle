@@ -1,0 +1,2 @@
+rootProject.name='Kontry'
+include ':app'

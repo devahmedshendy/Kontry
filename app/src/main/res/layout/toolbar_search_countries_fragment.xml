@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="isEmptySearchInput"
+            type="boolean" />
+    </data>
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/searchCountriesWindowBackground"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp">
+
+            <TextView
+                android:id="@+id/sc_cancel_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:fontFamily="@font/libre_franklin_medium"
+                android:gravity="center"
+                android:paddingStart="10dp"
+                android:paddingEnd="5dp"
+                android:text="@android:string/cancel"
+                android:textAllCaps="true"
+                android:textColor="@color/searchCountriesCancelFont"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/sc_search_country_input"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/sc_search_country_input" />
+
+            <EditText
+                android:id="@+id/sc_search_country_input"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:background="@drawable/shape_search_countries_input"
+                android:drawableStart="@drawable/ic_search_edittext_drawable"
+                android:drawablePadding="5dp"
+                android:hint="@string/search_country_hint"
+                android:inputType="text"
+                android:paddingStart="10dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="5dp"
+                android:textColor="@color/searchCountriesFontPrimary"
+                android:textColorHint="@color/searchCountriesFontPrimaryLight"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/sc_cancel_btn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/sc_clear_text_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:paddingStart="10dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="5dp"
+                android:visibility="@{isEmptySearchInput ? View.GONE : View.VISIBLE, default = `gone`}"
+                app:layout_constraintBottom_toBottomOf="@+id/sc_search_country_input"
+                app:layout_constraintEnd_toEndOf="@+id/sc_search_country_input"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/sc_search_country_input"
+                app:layout_constraintTop_toTopOf="@+id/sc_search_country_input"
+                app:srcCompat="@drawable/ic_clear_text"
+                tools:visibility="visible" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+</layout>

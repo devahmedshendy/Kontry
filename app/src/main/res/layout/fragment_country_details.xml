@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.text.TextUtils" />
+        <variable
+            name="country"
+            type="learn.shendy.kontry.repository.model.country.Country" />
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/cc_country_name_background"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/shape_country_name_background"
+                app:layout_constraintBottom_toBottomOf="@id/cc_country_name_title_tv"
+                app:layout_constraintEnd_toEndOf="@id/cc_country_name_title_tv"
+                app:layout_constraintStart_toStartOf="@id/cc_country_name_title_tv"
+                app:layout_constraintTop_toTopOf="@id/cc_country_name_title_tv" />
+
+            <TextView
+                android:id="@+id/cc_country_name_title_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/libre_franklin_medium"
+                android:gravity="center"
+                android:padding="20dp"
+                android:textColor="@color/fontPrimary"
+                android:textSize="16sp"
+                android:text="@{country.name}"
+                app:layout_constraintEnd_toStartOf="@+id/cc_right_guideline"
+                app:layout_constraintStart_toStartOf="@+id/cc_left_guideline"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/country_name_sample" />
+
+            <ImageView
+                android:id="@+id/cc_country_flag_iv"
+                android:layout_width="0dp"
+                android:layout_height="220dp"
+                android:layout_marginTop="20dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/placeholder_loading_country_flag"
+                app:layout_constraintEnd_toEndOf="@id/cc_right_guideline"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@id/cc_left_guideline"
+                app:layout_constraintTop_toBottomOf="@id/cc_country_name_title_tv" />
+
+            <View
+                android:id="@+id/cc_capital_item"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/shape_country_details_item"
+                app:layout_constraintStart_toStartOf="@id/cc_capital_ic"
+                app:layout_constraintTop_toTopOf="@id/cc_capital_header_top_barrier"
+                app:layout_constraintBottom_toBottomOf="@id/cc_capital_header_bottom_barrier"
+                app:layout_constraintEnd_toEndOf="@id/cc_capital_value"/>
+
+
+            <ImageView
+                android:id="@+id/cc_capital_ic"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="@id/cc_capital_header"
+                app:layout_constraintStart_toStartOf="@+id/cc_left_guideline"
+                app:layout_constraintTop_toTopOf="@id/cc_capital_header"
+                app:srcCompat="@drawable/ic_capital" />
+
+            <TextView
+                android:id="@+id/cc_capital_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/libre_franklin_semibold"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/capital_header"
+                android:textAllCaps="true"
+                android:textColor="@color/fontPrimary"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@id/cc_capital_ic"
+                app:layout_constraintTop_toBottomOf="@id/cc_country_flag_iv" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/cc_capital_header_top_barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="top"
+                app:constraint_referenced_ids="cc_capital_header"
+                tools:layout_editor_absoluteY="300dp" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/cc_capital_header_bottom_barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="cc_capital_header"
+                tools:layout_editor_absoluteY="300dp" />
+
+            <TextView
+                android:id="@+id/cc_capital_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/libre_franklin"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:text='@{ TextUtils.isEmpty(country.capital) ? @string/not_available_info : country.capital }'
+                tools:text="@string/country_capital_sample"
+                android:textColor="@color/fontPrimary"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/cc_capital_header"
+                app:layout_constraintEnd_toEndOf="@id/cc_right_guideline"
+                app:layout_constraintStart_toEndOf="@id/cc_item_headers_barrier"
+                app:layout_constraintTop_toTopOf="@id/cc_capital_header" />
+
+
+            <View
+                android:id="@+id/cc_region_item"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/shape_country_details_item"
+                app:layout_constraintStart_toStartOf="@id/cc_region_ic"
+                app:layout_constraintTop_toTopOf="@id/cc_region_header_top_barrier"
+                app:layout_constraintBottom_toBottomOf="@id/cc_region_header_bottom_barrier"
+                app:layout_constraintEnd_toEndOf="@id/cc_region_value"/>
+
+
+            <ImageView
+                android:id="@+id/cc_region_ic"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="@id/cc_region_header"
+                app:layout_constraintStart_toStartOf="@+id/cc_left_guideline"
+                app:layout_constraintTop_toTopOf="@id/cc_region_header"
+                app:srcCompat="@drawable/ic_region" />
+
+            <TextView
+                android:id="@+id/cc_region_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/region_header"
+                android:textAllCaps="true"
+                android:textColor="@color/fontPrimary"
+                android:fontFamily="@font/libre_franklin_semibold"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/cc_region_ic"
+                app:layout_constraintTop_toBottomOf="@id/cc_capital_item" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/cc_region_header_top_barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="top"
+                app:constraint_referenced_ids="cc_region_header"
+                tools:layout_editor_absoluteY="300dp" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/cc_region_header_bottom_barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="cc_region_header"
+                tools:layout_editor_absoluteY="300dp" />
+
+            <TextView
+                android:id="@+id/cc_region_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/libre_franklin"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:text='@{ TextUtils.isEmpty(country.region) ? @string/not_available_info : country.region }'
+                tools:text="@string/country_region_sample"
+                android:textColor="@color/fontPrimary"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/cc_region_header"
+                app:layout_constraintEnd_toEndOf="@id/cc_right_guideline"
+                app:layout_constraintStart_toEndOf="@id/cc_item_headers_barrier"
+                app:layout_constraintTop_toTopOf="@id/cc_region_header" />
+
+
+
+
+            <View
+                android:id="@+id/cc_population_item"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/shape_country_details_item"
+                app:layout_constraintStart_toStartOf="@id/cc_population_ic"
+                app:layout_constraintTop_toTopOf="@id/cc_population_header_top_barrier"
+                app:layout_constraintBottom_toBottomOf="@id/cc_population_header_bottom_barrier"
+                app:layout_constraintEnd_toEndOf="@id/cc_population_value"/>
+
+
+            <ImageView
+                android:id="@+id/cc_population_ic"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="@id/cc_population_header"
+                app:layout_constraintStart_toStartOf="@+id/cc_left_guideline"
+                app:layout_constraintTop_toTopOf="@id/cc_population_header"
+                app:srcCompat="@drawable/ic_population" />
+
+            <TextView
+                android:id="@+id/cc_population_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/population_header"
+                android:textAllCaps="true"
+                android:textColor="@color/fontPrimary"
+                android:fontFamily="@font/libre_franklin_semibold"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/cc_population_ic"
+                app:layout_constraintTop_toBottomOf="@id/cc_region_item" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/cc_population_header_top_barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="top"
+                app:constraint_referenced_ids="cc_population_header"
+                tools:layout_editor_absoluteY="300dp" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/cc_population_header_bottom_barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="cc_population_header"
+                tools:layout_editor_absoluteY="300dp" />
+
+            <TextView
+                android:id="@+id/cc_population_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/libre_franklin"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:text='@{ String.valueOf(country.population) }'
+                tools:text="@string/country_population_sample"
+                android:textColor="@color/fontPrimary"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/cc_population_header"
+                app:layout_constraintEnd_toEndOf="@id/cc_right_guideline"
+                app:layout_constraintStart_toEndOf="@id/cc_item_headers_barrier"
+                app:layout_constraintTop_toTopOf="@id/cc_population_header" />
+
+
+
+            <View
+                android:id="@+id/cc_currency_item"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/shape_country_details_item"
+                app:layout_constraintStart_toStartOf="@id/cc_currency_ic"
+                app:layout_constraintTop_toTopOf="@id/cc_currency_header_top_barrier"
+                app:layout_constraintBottom_toBottomOf="@id/cc_currency_header_bottom_barrier"
+                app:layout_constraintEnd_toEndOf="@id/cc_currency_value"/>
+
+
+            <ImageView
+                android:id="@+id/cc_currency_ic"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="@id/cc_currency_header"
+                app:layout_constraintStart_toStartOf="@+id/cc_left_guideline"
+                app:layout_constraintTop_toTopOf="@id/cc_currency_header"
+                app:srcCompat="@drawable/ic_currency" />
+
+            <TextView
+                android:id="@+id/cc_currency_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/currency_header"
+                android:textAllCaps="true"
+                android:textColor="@color/fontPrimary"
+                android:fontFamily="@font/libre_franklin_semibold"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/cc_currency_ic"
+                app:layout_constraintTop_toBottomOf="@id/cc_population_item" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/cc_currency_header_top_barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="top"
+                app:constraint_referenced_ids="cc_currency_header"
+                tools:layout_editor_absoluteY="300dp" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/cc_currency_header_bottom_barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="cc_currency_header"
+                tools:layout_editor_absoluteY="300dp" />
+
+            <TextView
+                android:id="@+id/cc_currency_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/libre_franklin"
+                android:padding="10dp"
+                android:singleLine="true"
+                setCurrency="@{country.currency}"
+                tools:text="@string/country_currency_sample"
+                android:textColor="@color/fontPrimary"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/cc_currency_header"
+                app:layout_constraintEnd_toEndOf="@id/cc_right_guideline"
+                app:layout_constraintStart_toEndOf="@id/cc_item_headers_barrier"
+                app:layout_constraintTop_toTopOf="@id/cc_currency_header" />
+
+
+
+            <View
+                android:id="@+id/cc_languages_item"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/shape_country_details_item"
+                app:layout_constraintStart_toStartOf="@id/cc_languages_ic"
+                app:layout_constraintTop_toTopOf="@id/cc_languages_header_top_barrier"
+                app:layout_constraintBottom_toBottomOf="@id/cc_languages_header_bottom_barrier"
+                app:layout_constraintEnd_toEndOf="@id/cc_languages_value"/>
+
+
+            <ImageView
+                android:id="@+id/cc_languages_ic"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="@id/cc_languages_header"
+                app:layout_constraintStart_toStartOf="@+id/cc_left_guideline"
+                app:layout_constraintTop_toTopOf="@id/cc_languages_header"
+                app:srcCompat="@drawable/ic_languages" />
+
+            <TextView
+                android:id="@+id/cc_languages_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/languages_header"
+                android:textAllCaps="true"
+                android:textColor="@color/fontPrimary"
+                android:fontFamily="@font/libre_franklin_semibold"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/cc_languages_ic"
+                app:layout_constraintTop_toBottomOf="@id/cc_currency_item" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/cc_languages_header_top_barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="top"
+                app:constraint_referenced_ids="cc_languages_header,cc_languages_value"
+                tools:layout_editor_absoluteY="300dp" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/cc_languages_header_bottom_barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="cc_languages_header,cc_languages_value"
+                tools:layout_editor_absoluteY="300dp" />
+
+            <TextView
+                android:id="@+id/cc_languages_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/libre_franklin"
+                android:paddingStart="10dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="10dp"
+                android:singleLine="false"
+                setLanguages="@{country.languages}"
+                tools:text="@string/country_languages_sample"
+                android:textAlignment="viewStart"
+                android:textColor="@color/fontPrimary"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@id/cc_right_guideline"
+                app:layout_constraintStart_toEndOf="@id/cc_item_headers_barrier"
+                app:layout_constraintTop_toTopOf="@id/cc_languages_header" />
+
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/cc_item_headers_barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="right"
+                app:constraint_referenced_ids="cc_capital_header,cc_region_header,cc_population_header,cc_currency_header,cc_languages_header"
+                tools:layout_editor_absoluteX="411dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/cc_left_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="20dp"
+                app:layout_constraintGuide_end="391dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/cc_right_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="20dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>

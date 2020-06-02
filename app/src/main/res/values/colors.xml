@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    <color name="colorPrimary">#6200EE</color>-->
+<!--    <color name="colorPrimaryDark">#3700B3</color>-->
+<!--    <color name="colorAccent">#03DAC5</color>-->
+
+    <color name="colorPrimary">#1D1D1D</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="windowBackground">#1D1D1D</color>
+    <color name="statusBarColor">#1D1D1D</color>
+    <color name="bottomNavBackground">#2466F7</color>
+
+    <color name="fontPrimary">#EDEDED</color>
+    <color name="fontSecondary">#E1E1E1</color>
+
+    <color name="searchCountriesCancelFont">#2699FB</color>
+    <color name="searchCountriesFontPrimary">#EDEDED</color>
+    <color name="searchCountriesFontPrimaryLight">#80EDEDED</color>
+    <color name="searchCountriesFontPrimaryLighter">#60EDEDED</color>
+    <color name="searchCountriesInputBackground">#616161</color>
+    <color name="searchCountriesWindowBackground">#2A292A</color>
+
+    <color name="countryCellBorder">#616161</color>
+    <color name="countryCellBackground">#2A292A</color>
+    <color name="countryBadgeBackground">#616161</color>
+    <color name="countryBadgeBorder">#5E9C76</color>
+
+    <color name="countryDetailsItemBackground">#616161</color>
+    <color name="countryDetailsItemBorder">#2A292A</color>
+
+    <color name="unreachableInternetBackground">#2A292A</color>
+    <color name="unreachableInternetBorder">#616161</color>
+    <color name="unreachableInternetSpinner">#2699FB</color>
+
+    <color name="retryButtonColor">#2699FB</color>
+    <color name="retrySpinnerColor">#2699FB</color>
+</resources>

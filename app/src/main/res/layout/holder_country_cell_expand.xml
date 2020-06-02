@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/holder_country_cell_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="0dp">
+
+        <View
+            android:id="@+id/cc_cell_wrapper"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/shape_transition_country_cell"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/cc_right_guideline"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/cc_left_guideline"
+            app:layout_constraintTop_toTopOf="@id/cc_country_name_top_barrier"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/cc_country_name_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:padding="10dp"
+            android:text="@string/country_name_sample"
+            android:textAlignment="center"
+            android:textColor="@color/fontPrimary"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/cc_cell_wrapper"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/cc_left_guideline"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="United Kingdom of Great Britian and Northarn Ireland" />
+
+        <ImageView
+            android:id="@+id/cc_expand_cell_btn"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:adjustViewBounds="true"
+            android:padding="5dp"
+            app:layout_constraintBottom_toBottomOf="@id/cc_country_name_top_barrier"
+            app:layout_constraintEnd_toStartOf="@+id/cc_right_guideline"
+            app:layout_constraintStart_toStartOf="@+id/cc_right_guideline"
+            app:layout_constraintTop_toTopOf="@id/cc_country_name_top_barrier"
+            app:srcCompat="@drawable/shape_transition_expand_btn" />
+
+        <View
+            android:id="@+id/cc_country_flag_center"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="@+id/cc_country_flag_iv"
+            app:layout_constraintEnd_toEndOf="@+id/cc_country_flag_iv"
+            app:layout_constraintStart_toStartOf="@+id/cc_country_flag_iv"
+            app:layout_constraintTop_toTopOf="@+id/cc_country_flag_iv" />
+
+        <ImageView
+            android:id="@+id/cc_country_flag_iv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/placeholder_loading_country_flag"
+            app:layout_constraintEnd_toStartOf="@+id/cc_right_guideline"
+            app:layout_constraintStart_toStartOf="@+id/cc_left_guideline"
+            app:layout_constraintTop_toBottomOf="@id/cc_country_name_bottom_barrier" />
+
+        <View
+            android:id="@+id/cc_country_flag_padding_extension"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="@+id/cc_country_flag_iv"
+            app:layout_constraintStart_toStartOf="@+id/cc_country_flag_iv"
+            app:layout_constraintTop_toBottomOf="@id/cc_country_flag_iv" />
+
+        <View
+            android:id="@+id/cc_country_badges_wrapper"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:alpha=".6"
+            android:background="@color/countryCellBackground"
+            app:layout_constraintBottom_toBottomOf="@+id/cc_country_flag_iv"
+            app:layout_constraintEnd_toEndOf="@+id/cc_country_flag_iv"
+            app:layout_constraintStart_toStartOf="@+id/cc_country_flag_iv" />
+
+        <View
+            android:id="@+id/cc_country_capital_badge"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/shape_country_badge"
+            app:layout_constraintBottom_toBottomOf="@+id/cc_country_badges_bottom_barrier"
+            app:layout_constraintEnd_toEndOf="@+id/cc_country_capital_tv"
+            app:layout_constraintStart_toStartOf="@+id/cc_country_capital_iv"
+            app:layout_constraintTop_toTopOf="@+id/cc_country_badges_top_barrier" />
+
+        <ImageView
+            android:id="@+id/cc_country_capital_iv"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:paddingStart="10dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cc_country_badges_wrapper"
+            app:layout_constraintEnd_toStartOf="@+id/cc_country_capital_tv"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@id/cc_country_badges_wrapper"
+            app:layout_constraintTop_toTopOf="@+id/cc_country_badges_wrapper"
+            app:srcCompat="@drawable/ic_capital" />
+
+        <TextView
+            android:id="@+id/cc_country_capital_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="5dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="2dp"
+            android:text="@string/country_capital_sample"
+            android:textColor="@color/fontPrimary"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/cc_country_capital_iv"
+            app:layout_constraintEnd_toStartOf="@+id/cc_country_population_iv"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cc_country_capital_iv"
+            app:layout_constraintTop_toTopOf="@+id/cc_country_capital_iv" />
+
+        <View
+            android:id="@+id/cc_country_population_badge"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/shape_country_badge"
+            app:layout_constraintBottom_toBottomOf="@+id/cc_country_badges_bottom_barrier"
+            app:layout_constraintEnd_toEndOf="@+id/cc_country_population_tv"
+            app:layout_constraintStart_toStartOf="@+id/cc_country_population_iv"
+            app:layout_constraintTop_toTopOf="@+id/cc_country_badges_top_barrier" />
+
+        <ImageView
+            android:id="@+id/cc_country_population_iv"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            android:paddingStart="10dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cc_country_capital_tv"
+            app:layout_constraintEnd_toStartOf="@+id/cc_country_population_tv"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cc_country_capital_tv"
+            app:layout_constraintTop_toTopOf="@+id/cc_country_capital_tv"
+            app:srcCompat="@drawable/ic_population" />
+
+        <TextView
+            android:id="@+id/cc_country_population_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="5dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="2dp"
+            android:text="@string/country_population_sample"
+            android:textColor="@color/fontPrimary"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/cc_country_population_iv"
+            app:layout_constraintEnd_toEndOf="@id/cc_country_badges_wrapper"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cc_country_population_iv"
+            app:layout_constraintTop_toTopOf="@+id/cc_country_population_iv" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/cc_country_badges_top_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="top"
+            app:constraint_referenced_ids="cc_country_capital_iv,cc_country_population_iv"
+            tools:layout_editor_absoluteY="731dp" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/cc_country_badges_bottom_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="cc_country_capital_iv,cc_country_population_iv"
+            tools:layout_editor_absoluteY="731dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/cc_left_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/cc_right_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="26dp" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/cc_country_name_top_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="top"
+            app:constraint_referenced_ids="cc_country_name_tv"
+            tools:layout_editor_absoluteY="731dp" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/cc_country_name_bottom_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="cc_country_name_tv"
+            tools:layout_editor_absoluteY="731dp" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/cc_details_groups"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="cc_country_capital_tv,cc_country_capital_badge,cc_country_flag_center,cc_country_population_iv,cc_country_population_badge,cc_country_population_tv,cc_country_capital_iv,cc_country_badges_wrapper,cc_country_flag_iv,cc_country_flag_padding_extension"
+            tools:layout_editor_absoluteY="10dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
