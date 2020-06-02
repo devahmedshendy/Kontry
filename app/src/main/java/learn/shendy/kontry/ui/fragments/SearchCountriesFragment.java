@@ -129,6 +129,7 @@ public class SearchCountriesFragment extends BaseFragment implements TopSearchKe
                 .map(CharSequence::toString)
                 .map(this::respondToEmptySearchInput)
                 .filter(keyword -> !keyword.isEmpty())
+                .map(String::trim)
                 .doOnNext(keyword -> mStore.actions
                         .searchCountries(keyword)
                         .observeOn(AndroidSchedulers.mainThread())
