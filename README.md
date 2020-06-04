@@ -27,16 +27,16 @@ This app communicates with http://restcountries.eu/ API which provide details ab
 ## DEMOS
 - **`Expand/Shrink Country Cell`**  
 
-[<p align="center"><img src="https://img.youtube.com/vi/UK1PwnGYCo0/maxresdefault.jpg" width="60%"></p>](https://youtu.be/UK1PwnGYCo0)  
+[<p align="center"><img src="https://img.youtube.com/vi/UK1PwnGYCo0/maxresdefault.jpg" width="70%"></p>](https://youtu.be/UK1PwnGYCo0)  
 
 - **`Search Country by Name`**  
 
-[<p align="center"><img src="https://img.youtube.com/vi/c4yTxPS2lWI/maxresdefault.jpg" width="60%"></p>](https://youtu.be/c4yTxPS2lWI)  
+[<p align="center"><img src="https://img.youtube.com/vi/c4yTxPS2lWI/maxresdefault.jpg" width="70%"></p>](https://youtu.be/c4yTxPS2lWI)  
 
 - `Search and Display Country Details` 
 
-[<p align="center"><img src="https://img.youtube.com/vi/E3gvH2B3gsA/maxresdefault.jpg" width="60%"></p>](https://youtu.be/E3gvH2B3gsA)  
+[<p align="center"><img src="https://img.youtube.com/vi/E3gvH2B3gsA/maxresdefault.jpg" width="70%"></p>](https://youtu.be/E3gvH2B3gsA)  
 
 - **`Display Country Details`**  
 
-[<p align="center"><img src="https://img.youtube.com/vi/Lcpnja0poW0/maxresdefault.jpg" width="60%"></p>](https://youtu.be/Lcpnja0poW0)  
+[<p align="center"><img src="https://img.youtube.com/vi/Lcpnja0poW0/maxresdefault.jpg" width="70%"></p>](https://youtu.be/Lcpnja0poW0)  
