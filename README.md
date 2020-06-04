@@ -1,5 +1,5 @@
 # Kontry
-This app communicates with http://restcountries.eu/ API which provide details about countries like name, flag, currencies, capital, population and much more, and implements the following features.
+This app communicates with http://restcountries.eu/ API which provide details about countries like name, capital, population and much more.
 
 ## NOTES
 > This app is made for learning purpose only.  
